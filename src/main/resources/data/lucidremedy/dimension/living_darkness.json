@@ -1,0 +1,12 @@
+{
+  "type": "lucidremedy:living_darkness",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "lucidremedy:living_darkness",
+      "lakes": false,
+      "features": false,
+      "layers": []
+    }
+  }
+}

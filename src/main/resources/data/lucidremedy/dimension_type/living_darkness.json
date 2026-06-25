@@ -1,0 +1,27 @@
+{
+  "attributes": {
+    "minecraft:audio/ambient_sounds": {
+      "additions": [
+        {
+          "sound": "minecraft:block.eyeblossom.idle",
+          "tick_chance": 0.005
+        }
+      ]
+    },
+    "minecraft:visual/block_light_tint": 13210879,
+    "minecraft:visual/fog_color": 0
+  },
+  "has_skylight": false,
+  "has_ceiling": true,
+  "has_ender_dragon_fight": false,
+  "coordinate_scale": 1,
+  "ambient_light": 0,
+  "has_fixed_time": true,
+  "logical_height": 256,
+  "skybox": "none",
+  "infiniburn": "#minecraft:infiniburn_end",
+  "min_y": -128,
+  "height": 256,
+  "monster_spawn_light_level": 0,
+  "monster_spawn_block_light_limit": 0
+}
