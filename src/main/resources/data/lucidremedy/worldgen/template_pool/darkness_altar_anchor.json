@@ -1,0 +1,15 @@
+{
+  "name": "lucidremedy:darkness_altar_anchor",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "lucidremedy:darkness_altar_0",
+        "processors": "minecraft:empty"
+      }
+    }
+  ]
+}

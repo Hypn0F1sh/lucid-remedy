@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "lucidremedy:darkness_altar",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:concentric_rings",
+    "distance": 0,
+    "spread": 0,
+    "count": 1,
+    "preferred_biomes": "lucidremedy:living_darkness",
+    "salt": 85248241,
+    "frequency": 1
+  }
+}
