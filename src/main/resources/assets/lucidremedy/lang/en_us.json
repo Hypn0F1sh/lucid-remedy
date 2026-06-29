@@ -1,13 +1,5 @@
 {
-  "itemGroup.lucidremedy": "Example Mod Tab",
-  "block.lucidremedy.example_block": "Example Block",
-  "item.lucidremedy.example_item": "Example Item",
-
-  "lucidremedy.configuration.title": "Lucid Remedy Configs",
-  "lucidremedy.configuration.section.lucidremedy.common.toml": "Lucid Remedy Configs",
-  "lucidremedy.configuration.section.lucidremedy.common.toml.title": "Lucid Remedy Configs",
-  "lucidremedy.configuration.items": "Item List",
-  "lucidremedy.configuration.logDirtBlock": "Log Dirt Block",
-  "lucidremedy.configuration.magicNumberIntroduction": "Magic Number Text",
-  "lucidremedy.configuration.magicNumber": "Magic Number"
+  "item.lucidremedy.lucid_remedy": "Lucid Remedy",
+  "item.lucidremedy.chisel": "Chisel",
+  "item.lucidremedy.epidemic_scalpel": "Epidemic Scalpel"
 }

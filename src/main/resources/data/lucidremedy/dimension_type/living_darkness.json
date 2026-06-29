@@ -1,10 +1,11 @@
 {
   "attributes": {
     "minecraft:audio/ambient_sounds": {
+      "loop": "minecraft:ambient.basalt_deltas.loop",
       "additions": [
         {
-          "sound": "minecraft:block.eyeblossom.idle",
-          "tick_chance": 0.005
+          "sound": "minecraft:ambient.nether_wastes.mood",
+          "tick_chance": 0.0005
         }
       ]
     },

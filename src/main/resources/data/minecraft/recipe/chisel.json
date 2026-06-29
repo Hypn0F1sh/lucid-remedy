@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " ##",
+    " P#",
+    "P  "
+  ],
+  "key": {
+    "#": "minecraft:iron_nugget",
+    "P": "#minecraft:planks"
+  },
+  "result": {
+    "id": "lucidremedy:chisel"
+  }
+}
