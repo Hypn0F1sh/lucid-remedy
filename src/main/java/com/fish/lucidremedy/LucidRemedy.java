@@ -1,5 +1,6 @@
 package com.fish.lucidremedy;
 
+import com.fish.lucidremedy.effect.ModEffects;
 import com.fish.lucidremedy.item.ModItems;
 import org.slf4j.Logger;
 
@@ -48,6 +49,10 @@ public class LucidRemedy {
 
         ModItems.register(modEventBus);
 
+
+
+        ModEffects.register(modEventBus);
+
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (LucidRemedy) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
@@ -67,6 +72,9 @@ public class LucidRemedy {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(ModItems.LUCID_REMEDY);
+        }
+        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(ModItems.CHISEL);
         }
     }
 
