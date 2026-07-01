@@ -1,8 +1,10 @@
 package com.fish.lucidremedy.effect;
 
 import com.fish.lucidremedy.LucidRemedy;
+import com.fish.lucidremedy.attribute.ModAttributes;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffects;
@@ -15,7 +17,11 @@ public class ModEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(BuiltInRegistries.MOB_EFFECT, LucidRemedy.MODID);
 
     public static final Holder<MobEffect> NONLUCID_EFFECT = MOB_EFFECTS.register("nonlucid",
-            () -> new NonLucidEffect(MobEffectCategory.HARMFUL, 0x000000));
+            () -> new NonLucidEffect(MobEffectCategory.HARMFUL, 0x000000)
+                    .addAttributeModifier(ModAttributes.NONLUCID,
+                            Identifier.fromNamespaceAndPath(LucidRemedy.MODID, "nonlucid"),
+                            1,
+                            AttributeModifier.Operation.ADD_VALUE));
 
 
     public static void register(IEventBus eventBus) {

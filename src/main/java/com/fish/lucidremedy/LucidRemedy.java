@@ -1,5 +1,6 @@
 package com.fish.lucidremedy;
 
+import com.fish.lucidremedy.attribute.ModAttributes;
 import com.fish.lucidremedy.effect.ModEffects;
 import com.fish.lucidremedy.item.ModItems;
 import org.slf4j.Logger;
@@ -52,6 +53,8 @@ public class LucidRemedy {
 
 
         ModEffects.register(modEventBus);
+
+        ModAttributes.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (LucidRemedy) to respond directly to events.

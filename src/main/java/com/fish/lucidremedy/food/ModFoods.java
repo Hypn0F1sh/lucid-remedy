@@ -22,6 +22,6 @@ public class ModFoods {
             .animation(ItemUseAnimation.DRINK)
             .sound(SoundEvents.HONEY_DRINK)
             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                    List.of(new MobEffectInstance(ModEffects.NONLUCID_EFFECT,100,1))
+                    List.of(new MobEffectInstance(ModEffects.NONLUCID_EFFECT,600,1))
             )).build();
 }

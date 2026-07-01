@@ -16,7 +16,7 @@ public class NonLucidEffect extends MobEffect {
     public boolean applyEffectTick(ServerLevel serverLevel, LivingEntity mob, int amplification) {
 
         if (mob instanceof Player player) {
-            player.causeFoodExhaustion(0.005F * 10);
+
         }
 
         return super.applyEffectTick(serverLevel, mob, amplification);
