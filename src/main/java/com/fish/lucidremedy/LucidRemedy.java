@@ -1,6 +1,7 @@
 package com.fish.lucidremedy;
 
 import com.fish.lucidremedy.attribute.ModAttributes;
+import com.fish.lucidremedy.block.ModBlocks;
 import com.fish.lucidremedy.effect.ModEffects;
 import com.fish.lucidremedy.item.ModItems;
 import org.slf4j.Logger;
@@ -49,6 +50,7 @@ public class LucidRemedy {
         modEventBus.addListener(this::commonSetup);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
 
 

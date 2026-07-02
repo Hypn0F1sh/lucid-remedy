@@ -1,6 +1,7 @@
 package com.fish.lucidremedy.datagen;
 
 import com.fish.lucidremedy.LucidRemedy;
+import com.fish.lucidremedy.block.ModBlocks;
 import com.fish.lucidremedy.item.ModItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
