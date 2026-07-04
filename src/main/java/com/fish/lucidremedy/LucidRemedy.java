@@ -50,7 +50,6 @@ public class LucidRemedy {
         modEventBus.addListener(this::commonSetup);
 
         ModItems.register(modEventBus);
-        ModBlocks.register(modEventBus);
 
 
 

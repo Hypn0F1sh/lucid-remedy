@@ -20,4 +20,12 @@ public class ModFoods {
             .onConsume(new ApplyStatusEffectsConsumeEffect(
                     List.of(new MobEffectInstance(ModEffects.NONLUCID_EFFECT,600,1))
             )).build();
+
+    public static final FoodProperties RAGE_EMETIC = new FoodProperties.Builder().nutrition(0).saturationModifier(0).alwaysEdible().build();
+    public static final Consumable RAGE_EMETIC_CONSUMABLE = Consumables.defaultDrink().consumeSeconds(2).hasConsumeParticles(false)
+            .animation(ItemUseAnimation.DRINK)
+            .sound(SoundEvents.HONEY_DRINK)
+            .onConsume(new ApplyStatusEffectsConsumeEffect(
+                    List.of(new MobEffectInstance(ModEffects.TEMPER_RETCH_EFFECT,1200,1))
+            )).build();
 }
