@@ -23,18 +23,22 @@ public class ModEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(BuiltInRegistries.MOB_EFFECT, LucidRemedy.MODID);
 
     public static final Holder<MobEffect> NONLUCID_EFFECT = MOB_EFFECTS.register("nonlucid",
-            () -> new NonLucidEffect(MobEffectCategory.HARMFUL, 0x000000)
+            () -> new NonLucidEffect(MobEffectCategory.NEUTRAL, 0x000000)
                     .addAttributeModifier(ModAttributes.NONLUCID,
                             Identifier.fromNamespaceAndPath(LucidRemedy.MODID, "nonlucid"),
                             1,
                             AttributeModifier.Operation.ADD_VALUE));
 
     public static final Holder<MobEffect> TEMPER_RETCH_EFFECT = MOB_EFFECTS.register("temper_retch",
-            () -> new TemperRetchEffect(MobEffectCategory.HARMFUL, 0xff8800, ParticleTypes.LAVA)
+            () -> new TemperRetchEffect(MobEffectCategory.NEUTRAL, 0xff8800, ParticleTypes.LAVA)
                     .addAttributeModifier(Attributes.ATTACK_DAMAGE,
                             Identifier.fromNamespaceAndPath(LucidRemedy.MODID, "temper_retch"),
                             2,
                             AttributeModifier.Operation.ADD_VALUE));
+
+    public static final Holder<MobEffect> EVASIUM_EFFECT = MOB_EFFECTS.register("evasium",
+            () -> new EvasiumEffect(MobEffectCategory.NEUTRAL, 0xff8800, ParticleTypes.SCRAPE)
+                    );
 
 
     public static void register(IEventBus eventBus) {

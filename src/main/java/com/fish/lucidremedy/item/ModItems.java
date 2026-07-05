@@ -18,8 +18,12 @@ public class ModItems {
                     food(ModFoods.LUCID_REMEDY, ModFoods.LUCID_REMEDY_CONSUMABLE).usingConvertsTo(Items.GLASS_BOTTLE)));
 
     public static final DeferredItem<Item> RAGE_EMETIC = ITEMS.registerItem("rage_emetic",
-            properties -> new Item(properties.stacksTo(1).
+            properties -> new Item(properties.stacksTo(8).
                     food(ModFoods.RAGE_EMETIC, ModFoods.RAGE_EMETIC_CONSUMABLE).usingConvertsTo(Items.GLASS_BOTTLE)));
+
+    public static final DeferredItem<Item> EVASIUM = ITEMS.registerItem("evasium",
+            properties -> new Item(properties.stacksTo(8).
+                    food(ModFoods.EVASIUM, ModFoods.EVASIUM_CONSUMABLE).usingConvertsTo(Items.GLASS_BOTTLE)));
 
     public static final DeferredItem<Item> EPIDEMIC_SCALPEL = ITEMS.registerItem("epidemic_scalpel",
             properties -> new Item(properties.stacksTo(1).durability(-1)

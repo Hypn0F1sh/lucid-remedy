@@ -18,7 +18,7 @@ public class ModFoods {
             .animation(ItemUseAnimation.DRINK)
             .sound(SoundEvents.HONEY_DRINK)
             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                    List.of(new MobEffectInstance(ModEffects.NONLUCID_EFFECT,600,1))
+                    List.of(new MobEffectInstance(ModEffects.NONLUCID_EFFECT,600,0))
             )).build();
 
     public static final FoodProperties RAGE_EMETIC = new FoodProperties.Builder().nutrition(0).saturationModifier(0).alwaysEdible().build();
@@ -26,6 +26,14 @@ public class ModFoods {
             .animation(ItemUseAnimation.DRINK)
             .sound(SoundEvents.HONEY_DRINK)
             .onConsume(new ApplyStatusEffectsConsumeEffect(
-                    List.of(new MobEffectInstance(ModEffects.TEMPER_RETCH_EFFECT,1200,1))
+                    List.of(new MobEffectInstance(ModEffects.TEMPER_RETCH_EFFECT,1200,0))
+            )).build();
+
+    public static final FoodProperties EVASIUM = new FoodProperties.Builder().nutrition(0).saturationModifier(0).alwaysEdible().build();
+    public static final Consumable EVASIUM_CONSUMABLE = Consumables.defaultDrink().consumeSeconds(2).hasConsumeParticles(false)
+            .animation(ItemUseAnimation.DRINK)
+            .sound(SoundEvents.HONEY_DRINK)
+            .onConsume(new ApplyStatusEffectsConsumeEffect(
+                    List.of(new MobEffectInstance(ModEffects.EVASIUM_EFFECT,999999,0))
             )).build();
 }
