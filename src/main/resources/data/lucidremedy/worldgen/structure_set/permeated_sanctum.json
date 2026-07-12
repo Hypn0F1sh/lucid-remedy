@@ -1,0 +1,20 @@
+{
+  "structures": [
+    {
+      "structure": "lucidremedy:permeated_sanctum",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 32,
+    "separation": 16,
+    "spread_type": "linear",
+    "salt": 85248241,
+    "frequency": 1,
+    "exclusion_zone": {
+      "other_set": "minecraft:ancient_cities",
+      "chunk_count": 6
+    }
+  }
+}

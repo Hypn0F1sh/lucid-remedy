@@ -27,7 +27,7 @@ public class ModItems {
 
     public static final DeferredItem<Item> EPIDEMIC_SCALPEL = ITEMS.registerItem("epidemic_scalpel",
             properties -> new Item(properties.stacksTo(1).durability(-1)
-                    .sword(ToolMaterial.IRON, 2, 200)));
+                    .sword(ToolMaterial.IRON, -2, 9999995)));
 
     public static final DeferredItem<Item> CHISEL = ITEMS.registerItem("chisel",
             properties -> new ChiselItem(properties.stacksTo(1).useCooldown(0.1F)));

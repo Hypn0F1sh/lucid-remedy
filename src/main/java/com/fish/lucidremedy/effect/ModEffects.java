@@ -33,7 +33,7 @@ public class ModEffects {
             () -> new TemperRetchEffect(MobEffectCategory.NEUTRAL, 0xff8800, ParticleTypes.LAVA)
                     .addAttributeModifier(Attributes.ATTACK_DAMAGE,
                             Identifier.fromNamespaceAndPath(LucidRemedy.MODID, "temper_retch"),
-                            2,
+                            1,
                             AttributeModifier.Operation.ADD_VALUE));
 
     public static final Holder<MobEffect> EVASIUM_EFFECT = MOB_EFFECTS.register("evasium",

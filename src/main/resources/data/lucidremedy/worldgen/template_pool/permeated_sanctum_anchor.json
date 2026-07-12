@@ -1,0 +1,18 @@
+{
+  "name": "lucidremedy:permeated_sanctum_anchor",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "lithostitched:delegating",
+        "delegate": {
+          "element_type": "minecraft:single_pool_element",
+          "projection": "rigid",
+          "location": "lucidremedy:permeated_sanctum_entrance",
+          "processors": "minecraft:empty"
+        }
+      }
+    }
+  ]
+}

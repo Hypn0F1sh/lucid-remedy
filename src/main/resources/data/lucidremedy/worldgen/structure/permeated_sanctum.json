@@ -1,0 +1,23 @@
+{
+  "type": "lithostitched:jigsaw",
+  "biomes": [
+    "minecraft:sunflower_plains",
+    "minecraft:plains"
+  ],
+  "step": "top_layer_modification",
+  "terrain_adaptation": "encapsulate",
+  "spawn_overrides": {},
+  "start_pool": "lucidremedy:permeated_sanctum_anchor",
+  "size": 60,
+  "start_height": {
+    "above_bottom": -9
+  },
+  "start_jigsaw_name": "minecraft:start",
+  "project_start_to_heightmap": "WORLD_SURFACE_WG",
+  "max_distance_from_center": {
+    "horizontal": 116,
+    "vertical": 4064
+  },
+  "use_expansion_hack": false,
+  "liquid_settings": "ignore_waterlogging"
+}

@@ -1,23 +1,17 @@
 package com.fish.lucidremedy.mixin;
 
+import com.fish.lucidremedy.effect.EvasiumEffect;
 import com.fish.lucidremedy.effect.ModEffects;
-import net.minecraft.core.BlockPos;
-import net.minecraft.util.Mth;
-import net.minecraft.util.profiling.Profiler;
-import net.minecraft.util.profiling.ProfilerFiller;
+import com.fish.lucidremedy.events.moveLerpEvent.MoveLerpEventHandler;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MoverType;
-import net.minecraft.world.level.ClipContext;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import java.util.UUID;
 
 @Mixin(Entity.class)
 public abstract class EntityMixin {
@@ -30,11 +24,18 @@ public abstract class EntityMixin {
     private void evasium$noBlockCollision(Vec3 movement, CallbackInfoReturnable<Vec3> cir) {
 
         Entity self = (Entity)(Object)this;
+        UUID uuid = self.getUUID();
+        EvasiumEffect.Mode mode = EvasiumEffect.MODE.getOrDefault(uuid, EvasiumEffect.Mode.FALL);
 
         if (self instanceof LivingEntity living &&
-                living.hasEffect(ModEffects.EVASIUM_EFFECT)) {
+                living.hasEffect(ModEffects.EVASIUM_EFFECT) && mode == EvasiumEffect.Mode.FALL) {
 
             cir.setReturnValue(movement);
+        } else if(MoveLerpEventHandler.MOVING.get(uuid) != null) {
+            if (MoveLerpEventHandler.MOVING.get(uuid)) {
+
+                cir.setReturnValue(movement);
+            }
         }
     }
 }
