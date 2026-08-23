@@ -3,7 +3,15 @@
   "package": "com.fish.lucidremedy.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "EntityMixin"
+    "EntityMixin",
+    "EntityAccessor"
+  ],
+  "client": [
+    "CameraMixin",
+    "FluidRendererMixin",
+    "ParticleEngineMixin",
+    "SoundEngineMixin",
+    "LightEngineMixin"
   ],
   "injectors": {
     "defaultRequire": 1

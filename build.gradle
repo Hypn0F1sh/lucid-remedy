@@ -43,7 +43,14 @@ repositories {
 
 // Standard Gradle dependency
 dependencies {
+    // Lithostitched
     implementation "maven.modrinth:XaDC71GB:84kuUpr4"
+
+    // LDLib2
+    implementation "maven.modrinth:B1CBVXHX:b75uKcOt"
+
+    // Photon2
+    implementation "maven.modrinth:gzevkJbM:Xl8OqIeD"
 }
 
 base {
