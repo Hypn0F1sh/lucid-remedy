@@ -22,13 +22,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class ModEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(BuiltInRegistries.MOB_EFFECT, LucidRemedy.MODID);
 
-    public static final Holder<MobEffect> NONLUCID_EFFECT = MOB_EFFECTS.register("nonlucid",
-            () -> new NonLucidEffect(MobEffectCategory.NEUTRAL, 0x000000)
-                    .addAttributeModifier(ModAttributes.NONLUCID,
-                            Identifier.fromNamespaceAndPath(LucidRemedy.MODID, "nonlucid"),
-                            1,
-                            AttributeModifier.Operation.ADD_VALUE));
-
     public static final Holder<MobEffect> TEMPER_RETCH_EFFECT = MOB_EFFECTS.register("temper_retch",
             () -> new TemperRetchEffect(MobEffectCategory.NEUTRAL, 0xff8800, ParticleTypes.LAVA)
                     .addAttributeModifier(Attributes.ATTACK_DAMAGE,
@@ -37,8 +30,14 @@ public class ModEffects {
                             AttributeModifier.Operation.ADD_VALUE));
 
     public static final Holder<MobEffect> EVASIUM_EFFECT = MOB_EFFECTS.register("evasium",
-            () -> new EvasiumEffect(MobEffectCategory.NEUTRAL, 0xff8800, ParticleTypes.SCRAPE)
+            () -> new EvasiumEffect(MobEffectCategory.NEUTRAL, 0x00ff88, ParticleTypes.SCRAPE)
                     );
+
+    public static final Holder<MobEffect> BLEEDING_EFFECT = MOB_EFFECTS.register("bleeding",
+            () -> new BleedingEffect(MobEffectCategory.NEUTRAL, 0x550000));
+
+    public static final Holder<MobEffect> INFECTION_EFFECT = MOB_EFFECTS.register("infection",
+            () -> new InfectionEffect(MobEffectCategory.NEUTRAL, 0x550000));
 
 
     public static void register(IEventBus eventBus) {

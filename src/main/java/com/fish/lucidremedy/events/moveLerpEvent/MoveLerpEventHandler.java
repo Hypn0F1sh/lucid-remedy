@@ -69,24 +69,24 @@ public class MoveLerpEventHandler {
 
     @SubscribeEvent
     public static void onBlockBreak(BlockEvent.BreakEvent event) {
-        event.setCanceled(MOVING.get(event.getPlayer().getUUID()));
+        event.setCanceled(MOVING.getOrDefault(event.getPlayer().getUUID(), false));
     }
 
     @SubscribeEvent
     public static void onBlockPlace(BlockEvent.EntityPlaceEvent event) {
         assert event.getEntity() != null;
-        event.setCanceled(MOVING.get(event.getEntity().getUUID()));
+        event.setCanceled(MOVING.getOrDefault(event.getEntity().getUUID(), false));
     }
 
     @SubscribeEvent
     public static void onAttack(AttackEntityEvent event) {
-        event.setCanceled(MOVING.get(event.getEntity().getUUID()));
+        event.setCanceled(MOVING.getOrDefault(event.getEntity().getUUID(), false));
     }
 
     @SubscribeEvent
     public static void onDamage(LivingDamageEvent.Pre event) {
-        if (MOVING.get(event.getEntity().getUUID()) != null) {
-            if (MOVING.get(event.getEntity().getUUID())) {
+        if (MOVING.getOrDefault(event.getEntity().getUUID(), false) != null) {
+            if (MOVING.getOrDefault(event.getEntity().getUUID(), false)) {
                 event.setNewDamage(0);
             }
         }

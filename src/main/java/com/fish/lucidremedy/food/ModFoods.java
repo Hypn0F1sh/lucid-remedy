@@ -17,9 +17,7 @@ public class ModFoods {
     public static final Consumable LUCID_REMEDY_CONSUMABLE = Consumables.defaultDrink().consumeSeconds(3).hasConsumeParticles(false)
             .animation(ItemUseAnimation.DRINK)
             .sound(SoundEvents.HONEY_DRINK)
-            .onConsume(new ApplyStatusEffectsConsumeEffect(
-                    List.of(new MobEffectInstance(ModEffects.NONLUCID_EFFECT,600,0))
-            )).build();
+            .build();
 
     public static final FoodProperties RAGE_EMETIC = new FoodProperties.Builder().nutrition(0).saturationModifier(0).alwaysEdible().build();
     public static final Consumable RAGE_EMETIC_CONSUMABLE = Consumables.defaultDrink().consumeSeconds(2).hasConsumeParticles(false)
