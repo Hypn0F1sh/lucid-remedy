@@ -37,6 +37,21 @@ public class ModItems {
     public static final DeferredItem<Item> LUKES_CLOVER = ITEMS.registerItem("lukes_clover",
             properties -> new Item(properties.stacksTo(1)));
 
+    public static final DeferredItem<Item> EGO_STONE_VITALITY = ITEMS.registerItem("ego_stone_vitality",
+            properties -> new UUIDItem(properties.stacksTo(1)));
+
+    public static final DeferredItem<Item> EGO_STONE_WRATH = ITEMS.registerItem("ego_stone_wrath",
+            properties -> new UUIDItem(properties.stacksTo(1)));
+
+    public static final DeferredItem<Item> EGO_STONE_AEGIS = ITEMS.registerItem("ego_stone_aegis",
+            properties -> new UUIDItem(properties.stacksTo(1)));
+
+    public static final DeferredItem<Item> EGO_STONE_AGILITY = ITEMS.registerItem("ego_stone_agility",
+            properties -> new UUIDItem(properties.stacksTo(1)));
+
+    public static final DeferredItem<Item> EGO_STONE_SPARK = ITEMS.registerItem("ego_stone_spark",
+            properties -> new UUIDItem(properties.stacksTo(1)));
+
 
     // Debug items
     public static final DeferredItem<Item> FERAL_PACT = ITEMS.registerItem("feral_pact",

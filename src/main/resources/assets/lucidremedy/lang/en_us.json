@@ -4,5 +4,11 @@
   "item.lucidremedy.evasium": "Evasium",
   "item.lucidremedy.chisel": "Chisel",
   "item.lucidremedy.lukes_clover": "Luke's Clover",
-  "item.lucidremedy.epidemic_scalpel": "Epidemic Scalpel"
+  "item.lucidremedy.epidemic_scalpel": "Epidemic Scalpel",
+
+  "item.lucidremedy.ego_stone_vitality": "Ego Stone",
+  "item.lucidremedy.ego_stone_wrath": "Ego Stone",
+  "item.lucidremedy.ego_stone_aegis": "Ego Stone",
+  "item.lucidremedy.ego_stone_agility": "Ego Stone",
+  "item.lucidremedy.ego_stone_spark": "Ego Stone"
 }

@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.NeoForge;
 
-
+@SuppressWarnings("deprecation")
 public class Ascend {
 
     public static final int maxCeilingDistance = 12;
