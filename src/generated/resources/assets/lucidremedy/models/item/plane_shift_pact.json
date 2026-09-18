@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "lucidremedy:item/plane_shift_pact"
+  }
+}

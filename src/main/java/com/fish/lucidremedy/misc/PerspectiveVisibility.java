@@ -1,6 +1,5 @@
 package com.fish.lucidremedy.misc;
 
-import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;

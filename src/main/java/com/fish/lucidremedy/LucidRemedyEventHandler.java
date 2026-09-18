@@ -34,6 +34,10 @@ public class LucidRemedyEventHandler {
                 EntityType.PLAYER,
                 ModAttributes.HAS_WATER_BLINDNESS
         );
+        event.add(
+                EntityType.PLAYER,
+                ModAttributes.HAS_PLANE_SHIFT
+        );
     }
 
     @SubscribeEvent

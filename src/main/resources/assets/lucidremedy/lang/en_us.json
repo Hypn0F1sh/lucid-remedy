@@ -10,5 +10,9 @@
   "item.lucidremedy.ego_stone_wrath": "Ego Stone",
   "item.lucidremedy.ego_stone_aegis": "Ego Stone",
   "item.lucidremedy.ego_stone_agility": "Ego Stone",
-  "item.lucidremedy.ego_stone_spark": "Ego Stone"
+  "item.lucidremedy.ego_stone_spark": "Ego Stone",
+
+  "block.lucidremedy.phase_gneiss": "Phase Gneiss",
+  "block.lucidremedy.phase_gneiss_bricks": "Phase Gneiss Bricks",
+  "block.lucidremedy.polished_phase_gneiss": "Polished Phase Gneiss"
 }

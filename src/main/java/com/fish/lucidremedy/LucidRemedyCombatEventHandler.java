@@ -77,7 +77,7 @@ public class LucidRemedyCombatEventHandler {
                 if (event.getTarget() instanceof LivingEntity target) {
                     FX fx = FXHelper.getFX(Identifier.fromNamespaceAndPath("lucidremedy", "slash"));
                     new EntityEffectExecutor(fx, target.level(), target, EntityEffectExecutor.AutoRotate.NONE).start();
-                    target.forceAddEffect(new MobEffectInstance(
+                    target.addEffect(new MobEffectInstance(
                             ModEffects.BLEEDING_EFFECT,
                             100
                     ), player);

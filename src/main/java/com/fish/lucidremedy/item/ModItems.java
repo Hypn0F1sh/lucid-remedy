@@ -4,6 +4,7 @@ import com.fish.lucidremedy.LucidRemedy;
 import com.fish.lucidremedy.food.ModFoods;
 import com.fish.lucidremedy.item.custom.ChiselItem;
 import com.fish.lucidremedy.item.custom.debug.FeralPactItem;
+import com.fish.lucidremedy.item.custom.debug.PlaneShiftPactItem;
 import com.fish.lucidremedy.item.custom.debug.WaterPactItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -59,6 +60,9 @@ public class ModItems {
 
     public static final DeferredItem<Item> WATER_PACT = ITEMS.registerItem("water_pact",
             properties -> new WaterPactItem(properties.stacksTo(1).useCooldown(0.1F)));
+
+    public static final DeferredItem<Item> PLANE_SHIFT_PACT = ITEMS.registerItem("plane_shift_pact",
+            properties -> new PlaneShiftPactItem(properties.stacksTo(1).useCooldown(0.1F)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

@@ -29,9 +29,15 @@ public class ModModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.EGO_STONE_AGILITY.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.EGO_STONE_SPARK.get(), ModelTemplates.FLAT_ITEM);
 
+        //Blocks
+        blockModels.createTrivialCube(ModBlocks.PHASE_GNEISS.get());
+        blockModels.createTrivialCube(ModBlocks.PHASE_GNEISS_BRICKS.get());
+        blockModels.createTrivialCube(ModBlocks.POLISHED_PHASE_GNEISS.get());
+
 
         //Debug
         itemModels.generateFlatItem(ModItems.FERAL_PACT.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.WATER_PACT.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.PLANE_SHIFT_PACT.get(), ModelTemplates.FLAT_ITEM);
     }
 }

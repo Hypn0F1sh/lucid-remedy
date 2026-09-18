@@ -1,5 +1,6 @@
 package com.fish.lucidremedy.mixin;
 
+import com.fish.lucidremedy.item.ModItems;
 import com.fish.lucidremedy.item.UUIDItem;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
@@ -38,6 +39,14 @@ public abstract class ItemEntityMixin {
             cancellable = true
     )
     private void uuidItem$gravity(CallbackInfoReturnable<Double> cir) {
-        cir.setReturnValue(0.0D);
+        if (
+                this.getItem().is(ModItems.EGO_STONE_VITALITY) ||
+                this.getItem().is(ModItems.EGO_STONE_WRATH) ||
+                this.getItem().is(ModItems.EGO_STONE_AEGIS) ||
+                this.getItem().is(ModItems.EGO_STONE_AGILITY) ||
+                this.getItem().is(ModItems.EGO_STONE_SPARK)
+        ) {
+            cir.setReturnValue(0.0D);
+        }
     }
 }

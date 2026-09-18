@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "lucidremedy:block/phase_gneiss_bricks"
+  }
+}

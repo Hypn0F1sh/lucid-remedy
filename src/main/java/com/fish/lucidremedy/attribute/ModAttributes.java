@@ -25,6 +25,12 @@ public class ModAttributes {
             ).setSyncable(true)
     );
 
+    public static final Holder<Attribute> HAS_PLANE_SHIFT = ATTRIBUTES.register("has_plane_shift", () -> new BooleanAttribute(
+                    "attributes.lucidremedy.has_plane_shift",
+                    false
+            ).setSyncable(true)
+    );
+
     public static void register(IEventBus eventBus) {ATTRIBUTES.register(eventBus);
     }
 }
