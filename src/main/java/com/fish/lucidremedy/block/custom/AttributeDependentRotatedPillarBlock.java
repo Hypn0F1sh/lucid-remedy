@@ -1,16 +1,15 @@
 package com.fish.lucidremedy.block.custom;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.particle.ParticleEngine;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -18,11 +17,11 @@ import net.minecraft.world.phys.shapes.EntityCollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class AttributeDependentBlock extends Block {
+public class AttributeDependentRotatedPillarBlock extends RotatedPillarBlock {
 
     final public Holder<Attribute> attribute;
 
-    public AttributeDependentBlock(Properties properties, Holder<Attribute> attribute) {
+    public AttributeDependentRotatedPillarBlock(Properties properties, Holder<Attribute> attribute) {
         super(properties);
         this.attribute = attribute;
     }
@@ -99,4 +98,6 @@ public class AttributeDependentBlock extends Block {
         }
         return Shapes.empty();
     }
+
+
 }

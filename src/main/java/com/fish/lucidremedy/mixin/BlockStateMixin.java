@@ -1,6 +1,6 @@
 package com.fish.lucidremedy.mixin;
 
-import com.fish.lucidremedy.block.custom.AttributeDependentBlock;
+import com.fish.lucidremedy.block.custom.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.world.level.block.RenderShape;
@@ -22,6 +22,62 @@ public class BlockStateMixin {
         BlockStateBase state = (BlockStateBase) (Object) this;
 
         if (state.getBlock() instanceof AttributeDependentBlock block) {
+
+            LocalPlayer player = Minecraft.getInstance().player;
+            if (player == null) {
+                cir.setReturnValue(RenderShape.INVISIBLE);
+                return;
+            }
+
+            var attributeInstance = player.getAttribute(block.attribute);
+            if (attributeInstance != null && attributeInstance.getValue() > 0.0) {
+                cir.setReturnValue(RenderShape.MODEL);
+            } else {
+                cir.setReturnValue(RenderShape.INVISIBLE);
+            }
+        } else if (state.getBlock() instanceof AttributeDependentRotatedPillarBlock block) {
+
+            LocalPlayer player = Minecraft.getInstance().player;
+            if (player == null) {
+                cir.setReturnValue(RenderShape.INVISIBLE);
+                return;
+            }
+
+            var attributeInstance = player.getAttribute(block.attribute);
+            if (attributeInstance != null && attributeInstance.getValue() > 0.0) {
+                cir.setReturnValue(RenderShape.MODEL);
+            } else {
+                cir.setReturnValue(RenderShape.INVISIBLE);
+            }
+        } else if (state.getBlock() instanceof AttributeDependentUntintedParticleLeavesBlock block) {
+
+            LocalPlayer player = Minecraft.getInstance().player;
+            if (player == null) {
+                cir.setReturnValue(RenderShape.INVISIBLE);
+                return;
+            }
+
+            var attributeInstance = player.getAttribute(block.attribute);
+            if (attributeInstance != null && attributeInstance.getValue() > 0.0) {
+                cir.setReturnValue(RenderShape.MODEL);
+            } else {
+                cir.setReturnValue(RenderShape.INVISIBLE);
+            }
+        } else if (state.getBlock() instanceof AttributeDependentSaplingBlock block) {
+
+            LocalPlayer player = Minecraft.getInstance().player;
+            if (player == null) {
+                cir.setReturnValue(RenderShape.INVISIBLE);
+                return;
+            }
+
+            var attributeInstance = player.getAttribute(block.attribute);
+            if (attributeInstance != null && attributeInstance.getValue() > 0.0) {
+                cir.setReturnValue(RenderShape.MODEL);
+            } else {
+                cir.setReturnValue(RenderShape.INVISIBLE);
+            }
+        } else if (state.getBlock() instanceof AttributeDependentFlowerPotBlock block) {
 
             LocalPlayer player = Minecraft.getInstance().player;
             if (player == null) {

@@ -1,5 +1,7 @@
 package com.fish.lucidremedy;
 
+import com.fish.lucidremedy.datagen.ModBlockTagsProvider;
+import com.fish.lucidremedy.datagen.ModDatapackProvider;
 import com.fish.lucidremedy.datagen.ModModelProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -14,7 +16,12 @@ public class LucidRemedyDataGen {
     public static void gatherClientData(GatherDataEvent.Client event) {
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
+        var lookupProvider = event.getLookupProvider();
+
+        generator.addProvider(true, new ModBlockTagsProvider(packOutput, lookupProvider));
 
         generator.addProvider(true, new ModModelProvider(packOutput));
+
+        generator.addProvider(true, new ModDatapackProvider(packOutput, lookupProvider));
     }
 }
