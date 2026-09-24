@@ -8,6 +8,7 @@ import net.minecraft.world.entity.ai.attributes.RangedAttribute;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.BooleanAttribute;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import org.apache.logging.log4j.Level;
 
 public class ModAttributes {
     public static final DeferredRegister<Attribute> ATTRIBUTES = DeferredRegister.create(

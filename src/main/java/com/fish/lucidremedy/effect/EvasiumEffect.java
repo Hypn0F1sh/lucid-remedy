@@ -65,9 +65,7 @@ public class EvasiumEffect extends MobEffect {
         BlockPos pos = mob.getOnPos().above(1);
         Level level = mob.level();
         UUID uuid = mob.getUUID();
-        if (level.getBlockState(pos).getFluidState().getFluidType().getIsWaterLike() ||
-                level.getBlockState(pos.above(1)).getFluidState().getFluidType().getIsWaterLike() ||
-                mob.isInLiquid()) {
+        if (mob.isInWater()) {
 
             double power = Math.min(3, (getWaterDepth(pos, level)* 0.5)+0.5);
             MODE.put(uuid, Mode.ASCEND);
@@ -97,6 +95,7 @@ public class EvasiumEffect extends MobEffect {
                 break;
             }
         }
+
         return result;
     }
 }

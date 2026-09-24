@@ -8,6 +8,7 @@ import com.fish.lucidremedy.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -29,7 +30,8 @@ public class ModBlocks {
     public static final DeferredBlock<Block> POLISHED_PHASE_GNEISS = registerBlock("polished_phase_gneiss",
             properties -> new AttributeDependentBlock(properties.noOcclusion(), ModAttributes.HAS_PLANE_SHIFT));
 
-
+    public static final DeferredBlock<Block> CHALK = BLOCKS.registerBlock("chalk",
+            properties -> new Block(properties.noCollision().instabreak().pushReaction(PushReaction.DESTROY)));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function) {

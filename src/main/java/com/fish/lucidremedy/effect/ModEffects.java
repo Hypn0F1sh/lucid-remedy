@@ -34,10 +34,10 @@ public class ModEffects {
                     );
 
     public static final Holder<MobEffect> BLEEDING_EFFECT = MOB_EFFECTS.register("bleeding",
-            () -> new BleedingEffect(MobEffectCategory.NEUTRAL, 0x550000));
+            () -> new BleedingEffect(MobEffectCategory.HARMFUL, 0x550000));
 
     public static final Holder<MobEffect> INFECTION_EFFECT = MOB_EFFECTS.register("infection",
-            () -> new InfectionEffect(MobEffectCategory.NEUTRAL, 0x550000));
+            () -> new InfectionEffect(MobEffectCategory.HARMFUL, 0x33cc33));
 
 
     public static void register(IEventBus eventBus) {
