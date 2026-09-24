@@ -7,6 +7,8 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.model.*;
+import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TexturedModel;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
 
@@ -48,6 +50,14 @@ public class ModModelProvider extends ModelProvider {
 
         blockModels.createTrivialBlock(ModBlocks.CHALK.get(), FlatBlock);
 
+        blockModels.createTrivialCube(ModBlocks.GHOST_ASPEN_PLANKS.get());
+
+        blockModels.woodProvider(ModBlocks.GHOST_ASPEN_LOG.get()).logWithHorizontal(ModBlocks.GHOST_ASPEN_LOG.get()).wood(ModBlocks.GHOST_ASPEN_WOOD.get());
+        blockModels.woodProvider(ModBlocks.STRIPPED_GHOST_ASPEN_LOG.get()).logWithHorizontal(ModBlocks.STRIPPED_GHOST_ASPEN_LOG.get()).wood(ModBlocks.STRIPPED_GHOST_ASPEN_WOOD.get());
+
+        blockModels.createTintedLeaves(ModBlocks.GHOST_ASPEN_LEAVES.get(), TexturedModel.LEAVES, -12012265);
+
+        blockModels.createPlantWithDefaultItem(ModBlocks.GHOST_ASPEN_SAPLING.get(), ModBlocks.POTTED_GHOST_ASPEN_SAPLING.get(), BlockModelGenerators.PlantType.NOT_TINTED);
 
         //Debug
         itemModels.generateFlatItem(ModItems.FERAL_PACT.get(), ModelTemplates.FLAT_ITEM);

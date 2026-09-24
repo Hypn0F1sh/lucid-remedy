@@ -1,15 +1,14 @@
 package com.fish.lucidremedy.block.custom;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.particle.ParticleEngine;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.PathComputationType;
@@ -17,15 +16,19 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.EntityCollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jspecify.annotations.Nullable;
 
-public class AttributeDependentBlock extends Block {
+import java.util.function.Supplier;
+
+public class AttributeDependentFlowerPotBlock extends FlowerPotBlock {
 
     final public Holder<Attribute> attribute;
 
-    public AttributeDependentBlock(Properties properties, Holder<Attribute> attribute) {
-        super(properties);
+    public AttributeDependentFlowerPotBlock(@Nullable Supplier<FlowerPotBlock> emptyPot, Supplier<? extends Block> potted, Properties properties, Holder<Attribute> attribute) {
+        super(emptyPot, potted, properties);
         this.attribute = attribute;
     }
+
 
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {

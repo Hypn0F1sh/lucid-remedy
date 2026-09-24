@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "lucidremedy:block/stripped_ghost_aspen_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "lucidremedy:block/stripped_ghost_aspen_wood"
+    },
+    "axis=z": {
+      "model": "lucidremedy:block/stripped_ghost_aspen_wood",
+      "x": 90
+    }
+  }
+}

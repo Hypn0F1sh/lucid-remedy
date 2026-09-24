@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "lucidremedy:block/ghost_aspen_leaves"
+  }
+}

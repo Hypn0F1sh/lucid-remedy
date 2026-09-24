@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/flower_pot_cross",
+  "textures": {
+    "plant": "lucidremedy:block/ghost_aspen_sapling"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "lucidremedy:block/ghost_aspen_log",
+    "side": "lucidremedy:block/ghost_aspen_log"
+  }
+}

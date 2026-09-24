@@ -32,7 +32,7 @@ public class PactUtils {
     }
 
     public static void Toggle(Holder<Attribute> attribute, String id, Player player) {
-        if (Objects.requireNonNull(player.getAttribute(attribute)).getValue() > 0) {
+        if (Objects.requireNonNull(player.getAttribute(attribute)).getModifier(Identifier.fromNamespaceAndPath(LucidRemedy.MODID, id)) != null) {
             Revoke(attribute, id, player);
         } else {
             Grant(attribute, id, player);

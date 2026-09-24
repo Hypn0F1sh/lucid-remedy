@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "lucidremedy:block/ghost_aspen_sapling"
+  }
+}
