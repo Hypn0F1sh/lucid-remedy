@@ -2,15 +2,19 @@ package com.fish.lucidremedy;
 
 
 import com.fish.lucidremedy.attribute.ModAttributes;
+import com.fish.lucidremedy.tags.ModItemTags;
 import net.minecraft.core.Holder;
+import net.minecraft.util.TriState;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.event.entity.EntityAttributeModificationEvent;
+import net.neoforged.neoforge.event.entity.player.ItemEntityPickupEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import org.jspecify.annotations.NonNull;
 
@@ -56,6 +60,18 @@ public class LucidRemedyEventHandler {
                     }
                 }
             }
+        }
+    }
+
+    @SubscribeEvent
+    public static void itemPickup(ItemEntityPickupEvent.Pre event) {
+        if (event.getItemEntity().getItem().is(ModItemTags.GHOST_ITEM)) {
+            Player player = event.getPlayer();
+            if (player.getAttributeValue(ModAttributes.HAS_PLANE_SHIFT) > 0) {
+                event.setCanPickup(TriState.TRUE);
+                return;
+            }
+            event.setCanPickup(TriState.FALSE);
         }
     }
 }

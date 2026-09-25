@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_features",
-  "biomes": "minecraft:plains",
+  "biomes": "minecraft:meadow",
   "features": "lucidremedy:ghost_aspen_placed",
   "step": "vegetal_decoration"
 }
