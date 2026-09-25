@@ -2,6 +2,7 @@ package com.fish.lucidremedy.item;
 
 import com.fish.lucidremedy.LucidRemedy;
 import com.fish.lucidremedy.food.ModFoods;
+import com.fish.lucidremedy.item.custom.ChalkItem;
 import com.fish.lucidremedy.item.custom.ChiselItem;
 import com.fish.lucidremedy.item.custom.debug.FeralPactItem;
 import com.fish.lucidremedy.item.custom.debug.PlaneShiftPactItem;
@@ -34,6 +35,9 @@ public class ModItems {
 
     public static final DeferredItem<Item> CHISEL = ITEMS.registerItem("chisel",
             properties -> new ChiselItem(properties.stacksTo(1).useCooldown(0.1F)));
+
+    public static final DeferredItem<Item> CHALK = ITEMS.registerItem("chalk",
+            properties -> new ChalkItem(properties.stacksTo(1).useCooldown(0.1F)));
 
     public static final DeferredItem<Item> LUKES_CLOVER = ITEMS.registerItem("lukes_clover",
             properties -> new Item(properties.stacksTo(1)));

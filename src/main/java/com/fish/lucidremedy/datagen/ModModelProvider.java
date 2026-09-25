@@ -30,14 +30,6 @@ public class ModModelProvider extends ModelProvider {
 
     @Override
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
-        TexturedModel.Provider FlatBlock = TexturedModel.createDefault(
-                TextureMapping::rail,
-                new ModelTemplate(
-                        Optional.of(Identifier.fromNamespaceAndPath(Identifier.DEFAULT_NAMESPACE, "item/generated")),
-                        Optional.empty(),
-                        TextureSlot.RAIL
-                )
-        );
 
         itemModels.generateFlatItem(ModItems.LUCID_REMEDY.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.RAGE_EMETIC.get(), ModelTemplates.FLAT_ITEM);

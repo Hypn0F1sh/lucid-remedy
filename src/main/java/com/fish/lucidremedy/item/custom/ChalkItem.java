@@ -19,7 +19,7 @@ public class ChalkItem extends Item {
             BlockPos pos = context.getClickedPos().above(1);
             Level level = context.getLevel();
             if (level.getBlockState(pos).canBeReplaced()) {
-                level.setBlock(pos, ModBlocks.PHASE_GNEISS.get().defaultBlockState(), 1);
+                level.setBlock(pos, ModBlocks.CHALK.get().defaultBlockState(), 1);
             }
         }
         return InteractionResult.FAIL;

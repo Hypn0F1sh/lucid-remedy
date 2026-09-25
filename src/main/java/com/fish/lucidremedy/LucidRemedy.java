@@ -65,6 +65,7 @@ public class LucidRemedy {
         }
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.CHISEL);
+            event.accept(ModItems.CHALK);
         }
     }
 
