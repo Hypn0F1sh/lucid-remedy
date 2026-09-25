@@ -9,6 +9,7 @@
     "ItemEntityMixin"
   ],
   "client": [
+    "EntityRenderDispatcherMixin",
     "CameraMixin",
     "FluidRendererMixin",
     "LightEngineMixin",

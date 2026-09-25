@@ -6,13 +6,22 @@ import com.fish.lucidremedy.item.ModItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
+import net.minecraft.client.data.models.MultiVariant;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TexturedModel;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.RailShape;
 
 import java.util.Optional;
+
+import static net.minecraft.client.data.models.BlockModelGenerators.plainVariant;
 
 public class ModModelProvider extends ModelProvider {
     public ModModelProvider(PackOutput output) {
@@ -22,11 +31,11 @@ public class ModModelProvider extends ModelProvider {
     @Override
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
         TexturedModel.Provider FlatBlock = TexturedModel.createDefault(
-                TextureMapping::cube,
+                TextureMapping::rail,
                 new ModelTemplate(
                         Optional.of(Identifier.fromNamespaceAndPath(Identifier.DEFAULT_NAMESPACE, "item/generated")),
                         Optional.empty(),
-                        TextureSlot.ALL
+                        TextureSlot.RAIL
                 )
         );
 
@@ -48,7 +57,7 @@ public class ModModelProvider extends ModelProvider {
         blockModels.createTrivialCube(ModBlocks.PHASE_GNEISS_BRICKS.get());
         blockModels.createTrivialCube(ModBlocks.POLISHED_PHASE_GNEISS.get());
 
-        blockModels.createTrivialBlock(ModBlocks.CHALK.get(), FlatBlock);
+        blockModels.createTrivialBlock(ModBlocks.CHALK.get(), TexturedModel.CARPET);
 
         blockModels.createTrivialCube(ModBlocks.GHOST_ASPEN_PLANKS.get());
 

@@ -10,10 +10,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FlowerPotBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -120,7 +117,7 @@ public class ModBlocks {
                     ModAttributes.HAS_PLANE_SHIFT));
 
     public static final DeferredBlock<Block> CHALK = BLOCKS.registerBlock("chalk",
-            properties -> new Block(properties.noCollision().instabreak().pushReaction(PushReaction.DESTROY)));
+            properties -> new CarpetBlock(properties.noCollision().instabreak().pushReaction(PushReaction.DESTROY)));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function) {

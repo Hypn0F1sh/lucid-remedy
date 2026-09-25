@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "minecraft:block/carpet",
   "textures": {
-    "all": "lucidremedy:block/chalk"
+    "wool": "lucidremedy:block/chalk"
   }
 }
