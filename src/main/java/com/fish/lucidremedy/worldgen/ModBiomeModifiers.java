@@ -22,7 +22,7 @@ public class ModBiomeModifiers {
         var biomes = context.lookup(Registries.BIOME);
 
         context.register(ADD_TREE_GHOST_ASPEN, new BiomeModifiers.AddFeaturesBiomeModifier(
-                HolderSet.direct(biomes.getOrThrow(Biomes.MEADOW)),
+                HolderSet.direct(biomes.getOrThrow(Biomes.SUNFLOWER_PLAINS)),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.GHOST_ASPEN_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 

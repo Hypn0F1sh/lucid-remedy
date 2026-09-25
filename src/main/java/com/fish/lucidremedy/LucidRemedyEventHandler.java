@@ -68,7 +68,6 @@ public class LucidRemedyEventHandler {
         if (event.getItemEntity().getItem().is(ModItemTags.GHOST_ITEM)) {
             Player player = event.getPlayer();
             if (player.getAttributeValue(ModAttributes.HAS_PLANE_SHIFT) > 0) {
-                event.setCanPickup(TriState.TRUE);
                 return;
             }
             event.setCanPickup(TriState.FALSE);

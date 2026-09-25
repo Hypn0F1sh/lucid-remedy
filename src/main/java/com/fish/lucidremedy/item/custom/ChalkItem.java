@@ -16,10 +16,13 @@ public class ChalkItem extends Item {
     @Override
     public InteractionResult useOn(UseOnContext context) {
         if (context.getClickedFace() == Direction.UP) {
-            BlockPos pos = context.getClickedPos().above(1);
+            BlockPos pos = context.getClickedPos();
             Level level = context.getLevel();
-            if (level.getBlockState(pos).canBeReplaced()) {
-                level.setBlock(pos, ModBlocks.CHALK.get().defaultBlockState(), 1);
+            if (level.getBlockState(pos).isSolid()) {
+                if (level.getBlockState(pos.above(1)).canBeReplaced()) {
+                    level.setBlock(pos.above(1), ModBlocks.CHALK.get().defaultBlockState(), 1);
+                    return InteractionResult.SUCCESS;
+                }
             }
         }
         return InteractionResult.FAIL;

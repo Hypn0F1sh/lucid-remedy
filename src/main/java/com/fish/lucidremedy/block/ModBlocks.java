@@ -116,6 +116,12 @@ public class ModBlocks {
                     .instabreak().noOcclusion().pushReaction(PushReaction.DESTROY),
                     ModAttributes.HAS_PLANE_SHIFT));
 
+    public static final DeferredBlock<Block> SOMEFLOWER = registerBlock("sunflower",
+            properties -> new AttributeDependentTallFlowerBlock(properties.
+                    mapColor(MapColor.PLANT).noCollision().instabreak().sound(SoundType.GRASS).
+                    offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY),
+                    ModAttributes.HAS_PLANE_SHIFT));
+
     public static final DeferredBlock<Block> CHALK = BLOCKS.registerBlock("chalk",
             properties -> new CarpetBlock(properties.noCollision().instabreak().pushReaction(PushReaction.DESTROY)));
 

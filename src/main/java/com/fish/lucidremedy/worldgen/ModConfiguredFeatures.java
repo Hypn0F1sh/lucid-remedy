@@ -25,7 +25,7 @@ public class ModConfiguredFeatures {
 
         register(context, GHOST_ASPEN_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.GHOST_ASPEN_LOG.get()),
-                new StraightTrunkPlacer(4, 2, 0),
+                new StraightTrunkPlacer(6, 4, 0),
                 BlockStateProvider.simple(ModBlocks.GHOST_ASPEN_LEAVES.get()),
                 new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
                 new TwoLayersFeatureSize(1, 0, 1)).build());

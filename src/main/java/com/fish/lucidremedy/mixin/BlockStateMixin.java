@@ -91,6 +91,20 @@ public class BlockStateMixin {
             } else {
                 cir.setReturnValue(RenderShape.INVISIBLE);
             }
+        } else if (state.getBlock() instanceof AttributeDependentTallFlowerBlock block) {
+
+            LocalPlayer player = Minecraft.getInstance().player;
+            if (player == null) {
+                cir.setReturnValue(RenderShape.INVISIBLE);
+                return;
+            }
+
+            var attributeInstance = player.getAttribute(block.attribute);
+            if (attributeInstance != null && attributeInstance.getValue() > 0.0) {
+                cir.setReturnValue(RenderShape.MODEL);
+            } else {
+                cir.setReturnValue(RenderShape.INVISIBLE);
+            }
         }
     }
 }

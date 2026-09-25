@@ -7,6 +7,7 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.MultiVariant;
+import net.minecraft.client.data.models.blockstates.BlockModelDefinitionGenerator;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.*;
@@ -44,6 +45,10 @@ public class ModModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.EGO_STONE_AGILITY.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.EGO_STONE_SPARK.get(), ModelTemplates.FLAT_ITEM);
 
+        //Ignored Items
+        itemModels.itemModelOutput.accept(ModItems.CHALK.get(),
+                ItemModelUtils.plainModel(Identifier.fromNamespaceAndPath(LucidRemedy.MODID, "item/chalk")));
+
         //Blocks
         blockModels.createTrivialCube(ModBlocks.PHASE_GNEISS.get());
         blockModels.createTrivialCube(ModBlocks.PHASE_GNEISS_BRICKS.get());
@@ -59,6 +64,8 @@ public class ModModelProvider extends ModelProvider {
         blockModels.createTintedLeaves(ModBlocks.GHOST_ASPEN_LEAVES.get(), TexturedModel.LEAVES, -12012265);
 
         blockModels.createPlantWithDefaultItem(ModBlocks.GHOST_ASPEN_SAPLING.get(), ModBlocks.POTTED_GHOST_ASPEN_SAPLING.get(), BlockModelGenerators.PlantType.NOT_TINTED);
+
+        blockModels.createDoublePlant(ModBlocks.SOMEFLOWER.get(), BlockModelGenerators.PlantType.NOT_TINTED);
 
         //Debug
         itemModels.generateFlatItem(ModItems.FERAL_PACT.get(), ModelTemplates.FLAT_ITEM);
