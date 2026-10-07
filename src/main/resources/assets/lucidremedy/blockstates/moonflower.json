@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "lucidremedy:block/moonflower_bottom"
+    },
+    "half=upper": {
+      "model": "lucidremedy:block/moonflower_top"
+    }
+  }
+}

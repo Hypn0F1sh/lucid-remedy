@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "lucidremedy:block/moonflower_bottom"
+  }
+}

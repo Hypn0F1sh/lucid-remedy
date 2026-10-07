@@ -7,6 +7,7 @@ import com.fish.lucidremedy.item.ModItems;
 import com.fish.lucidremedy.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.BlockGetter;
@@ -25,18 +26,15 @@ import java.util.function.Function;
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(LucidRemedy.MODID);
 
-    //public static final DeferredBlock<Block> WATERGRASS_BLOCK = BLOCKS.registerBlock("watergrass_block",
-    //        properties -> new WatergrassBlock(properties));
-
-    public static final DeferredBlock<Block> PHASE_GNEISS = registerBlock("phase_gneiss",
+    public static final DeferredBlock<Block> SPIRIT_GNEISS = registerBlock("spirit_gneiss",
             properties -> new AttributeDependentBlock(properties.sound(SoundType.STONE),
                     ModAttributes.HAS_PLANE_SHIFT));
 
-    public static final DeferredBlock<Block> PHASE_GNEISS_BRICKS = registerBlock("phase_gneiss_bricks",
+    public static final DeferredBlock<Block> SPIRIT_GNEISS_BRICKS = registerBlock("spirit_gneiss_bricks",
             properties -> new AttributeDependentBlock(properties.sound(SoundType.STONE),
                     ModAttributes.HAS_PLANE_SHIFT));
 
-    public static final DeferredBlock<Block> POLISHED_PHASE_GNEISS = registerBlock("polished_phase_gneiss",
+    public static final DeferredBlock<Block> POLISHED_SPIRIT_GNEISS = registerBlock("polished_spirit_gneiss",
             properties -> new AttributeDependentBlock(properties.sound(SoundType.STONE),
                     ModAttributes.HAS_PLANE_SHIFT));
 
@@ -85,7 +83,7 @@ public class ModBlocks {
             });
 
     public static final DeferredBlock<Block> GHOST_ASPEN_LEAVES = registerBlock("ghost_aspen_leaves",
-            properties -> new AttributeDependentUntintedParticleLeavesBlock(0.01f, ParticleTypes.ASH,
+            properties -> new AttributeDependentUntintedParticleLeavesBlock(0.02f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 16770365),
                     properties.mapColor(MapColor.METAL).strength(0.2F).randomTicks().sound(SoundType.GRASS)
                             .noOcclusion().isValidSpawn(Blocks::ocelotOrParrot).ignitedByLava().pushReaction(PushReaction.DESTROY),
                     ModAttributes.HAS_PLANE_SHIFT) {
@@ -116,7 +114,7 @@ public class ModBlocks {
                     .instabreak().noOcclusion().pushReaction(PushReaction.DESTROY),
                     ModAttributes.HAS_PLANE_SHIFT));
 
-    public static final DeferredBlock<Block> SOMEFLOWER = registerBlock("sunflower",
+    public static final DeferredBlock<Block> MOONFLOWER = registerBlock("moonflower",
             properties -> new AttributeDependentTallFlowerBlock(properties.
                     mapColor(MapColor.PLANT).noCollision().instabreak().sound(SoundType.GRASS).
                     offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY),

@@ -1,10 +1,12 @@
 package com.fish.lucidremedy;
 
 
+import com.fish.lucidremedy.attachment.ModAttachments;
 import com.fish.lucidremedy.attribute.ModAttributes;
 import com.fish.lucidremedy.effect.ModEffects;
 import com.fish.lucidremedy.item.ModItems;
 import com.fish.lucidremedy.powers.pacts.PactUtils;
+import com.fish.lucidremedy.tags.ModItemTags;
 import com.lowdragmc.photon.client.fx.EntityEffectExecutor;
 import com.lowdragmc.photon.client.fx.FX;
 import com.lowdragmc.photon.client.fx.FXHelper;
@@ -58,14 +60,34 @@ public class LucidRemedyCombatEventHandler {
 
     @SubscribeEvent
     public static void onDamage(LivingDamageEvent.Pre event) {
-        if (event.getEntity().hasEffect(ModEffects.EVASIUM_EFFECT)) {
-            event.getContainer().setNewDamage(0.0f);
-        }
         if (event.getEntity().hasEffect(ModEffects.INFECTION_EFFECT)){
             float mult = (float) ((event.getEntity().getEffect(ModEffects.INFECTION_EFFECT).getAmplifier() + 1) * 0.1);
             float damage = event.getContainer().getNewDamage();
             event.getContainer().setNewDamage(damage * mult + 1);
             event.getEntity().removeEffect(ModEffects.INFECTION_EFFECT);
+        }
+        if (event.getEntity().hasEffect(ModEffects.EVASIUM_EFFECT)) {
+            event.getContainer().setNewDamage(0.0f);
+        }
+        if (event.getEntity() instanceof Player player) {
+            if (!player.level().isClientSide()) {
+                if (event.getContainer().getNewDamage() >= player.getHealth()) {
+                    if (!player.getInventory().contains(ModItemTags.LUCKY_ITEM)) {
+                        int cooldown = player.getData(ModAttachments.LUCKY_COOLDOWN);
+                        if (cooldown <= 0) {
+                            float newDamage = player.getHealth() - 1.0f;
+                            if (newDamage < 0.0f) {
+                                event.getContainer().setNewDamage(0.0f);
+                                player.setHealth(1.0f);
+                            } else  {
+                                event.getContainer().setNewDamage(newDamage);
+                            }
+
+                            player.setData(ModAttachments.LUCKY_COOLDOWN, 200);
+                        }
+                    }
+                }
+            }
         }
     }
 

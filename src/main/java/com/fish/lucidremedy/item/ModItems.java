@@ -4,6 +4,7 @@ import com.fish.lucidremedy.LucidRemedy;
 import com.fish.lucidremedy.food.ModFoods;
 import com.fish.lucidremedy.item.custom.ChalkItem;
 import com.fish.lucidremedy.item.custom.ChiselItem;
+import com.fish.lucidremedy.item.custom.CloverItem;
 import com.fish.lucidremedy.item.custom.debug.FeralPactItem;
 import com.fish.lucidremedy.item.custom.debug.PlaneShiftPactItem;
 import com.fish.lucidremedy.item.custom.debug.WaterPactItem;
@@ -40,7 +41,7 @@ public class ModItems {
             properties -> new ChalkItem(properties.stacksTo(1).useCooldown(0.1F)));
 
     public static final DeferredItem<Item> LUKES_CLOVER = ITEMS.registerItem("lukes_clover",
-            properties -> new Item(properties.stacksTo(1)));
+            properties -> new CloverItem(properties.stacksTo(1).durability(0)));
 
     public static final DeferredItem<Item> EGO_STONE_VITALITY = ITEMS.registerItem("ego_stone_vitality",
             properties -> new UUIDItem(properties.stacksTo(1)));

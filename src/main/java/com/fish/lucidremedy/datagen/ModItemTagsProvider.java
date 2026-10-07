@@ -2,6 +2,7 @@ package com.fish.lucidremedy.datagen;
 
 import com.fish.lucidremedy.LucidRemedy;
 import com.fish.lucidremedy.block.ModBlocks;
+import com.fish.lucidremedy.item.ModItems;
 import com.fish.lucidremedy.tags.ModItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -24,8 +25,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModBlocks.GHOST_ASPEN_SAPLING.asItem())
                 .add(ModBlocks.STRIPPED_GHOST_ASPEN_LOG.asItem())
                 .add(ModBlocks.STRIPPED_GHOST_ASPEN_WOOD.asItem())
-                .add(ModBlocks.PHASE_GNEISS.asItem())
-                .add(ModBlocks.PHASE_GNEISS_BRICKS.asItem())
-                .add(ModBlocks.POLISHED_PHASE_GNEISS.asItem());
+                .add(ModBlocks.SPIRIT_GNEISS.asItem())
+                .add(ModBlocks.SPIRIT_GNEISS_BRICKS.asItem())
+                .add(ModBlocks.POLISHED_SPIRIT_GNEISS.asItem());
+        tag(ModItemTags.LUCKY_ITEM)
+                .add(ModItems.LUKES_CLOVER.asItem());
     }
 }

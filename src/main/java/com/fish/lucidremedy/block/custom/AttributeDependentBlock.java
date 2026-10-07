@@ -1,11 +1,13 @@
 package com.fish.lucidremedy.block.custom;
 
+import com.fish.lucidremedy.tags.ModItemTags;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.ParticleEngine;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -29,10 +31,16 @@ public class AttributeDependentBlock extends Block {
 
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        if (context instanceof EntityCollisionContext entityContext && entityContext.getEntity() instanceof LivingEntity living) {
-            var instance = living.getAttribute(attribute);
-            if (instance != null && instance.getValue() > 0.0) {
-                return Shapes.block();
+        if (context instanceof EntityCollisionContext entityContext) {
+            if (entityContext.getEntity() instanceof LivingEntity living) {
+                var instance = living.getAttribute(attribute);
+                if (instance != null && instance.getValue() > 0.0) {
+                    return super.getCollisionShape(state, level, pos, context);
+                }
+            } else if (entityContext.getEntity() instanceof ItemEntity item) {
+                if (item.getItem().is(ModItemTags.GHOST_ITEM)) {
+                    return super.getCollisionShape(state, level, pos, context);
+                }
             }
         }
         return Shapes.empty();
@@ -98,5 +106,59 @@ public class AttributeDependentBlock extends Block {
             }
         }
         return Shapes.empty();
+    }
+
+    @Override
+    protected boolean propagatesSkylightDown(BlockState state) {
+        var client = Minecraft.getInstance();
+        if (client != null) {
+            var player = client.player;
+            if (player != null) {
+                var instance = player.getAttribute(attribute);
+                if (instance != null && instance.getValue() > 0.0) {
+                    return super.propagatesSkylightDown(state);
+                }
+            }
+        }
+        return true;
+    }
+
+    @Override
+    protected int getLightDampening(BlockState state) {
+        var client = Minecraft.getInstance();
+        if (client != null) {
+            var player = client.player;
+            if (player != null) {
+                var instance = player.getAttribute(attribute);
+                if (instance != null && instance.getValue() > 0.0) {
+                    return super.getLightDampening(state);
+                }
+            }
+        }
+        return 0;
+    }
+
+    @Override
+    protected boolean useShapeForLightOcclusion(BlockState state) {
+        return true;
+    }
+
+    @Override
+    protected boolean isAir(BlockState state) {
+        var client = Minecraft.getInstance();
+        if (client != null) {
+            var player = client.player;
+            if (player != null) {
+                var instance = player.getAttribute(attribute);
+                if (instance != null && instance.getValue() > 0.0) {
+                    return super.isAir(state);
+                }
+            }
+        }
+        return true;
+    }
+
+    public Holder<Attribute> getAttribute() {
+        return attribute;
     }
 }

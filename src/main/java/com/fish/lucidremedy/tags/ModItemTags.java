@@ -9,6 +9,7 @@ import net.minecraft.world.item.Item;
 public class ModItemTags {
 
     public static final TagKey<Item> GHOST_ITEM = bind("ghost_item");
+    public static final TagKey<Item> LUCKY_ITEM = bind("lucky_item");
 
     private  ModItemTags() {
     }

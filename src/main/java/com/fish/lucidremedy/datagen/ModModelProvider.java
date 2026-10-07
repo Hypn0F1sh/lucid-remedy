@@ -6,23 +6,17 @@ import com.fish.lucidremedy.item.ModItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
-import net.minecraft.client.data.models.MultiVariant;
-import net.minecraft.client.data.models.blockstates.BlockModelDefinitionGenerator;
-import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
-import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TexturedModel;
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.RailShape;
 
-import java.util.Optional;
-
-import static net.minecraft.client.data.models.BlockModelGenerators.plainVariant;
+import java.util.Set;
+import java.util.stream.Stream;
 
 public class ModModelProvider extends ModelProvider {
     public ModModelProvider(PackOutput output) {
@@ -48,11 +42,13 @@ public class ModModelProvider extends ModelProvider {
         //Ignored Items
         itemModels.itemModelOutput.accept(ModItems.CHALK.get(),
                 ItemModelUtils.plainModel(Identifier.fromNamespaceAndPath(LucidRemedy.MODID, "item/chalk")));
+        itemModels.itemModelOutput.accept(ModBlocks.MOONFLOWER.get().asItem(),
+                ItemModelUtils.plainModel(Identifier.fromNamespaceAndPath(LucidRemedy.MODID, "item/moonflower")));
 
         //Blocks
-        blockModels.createTrivialCube(ModBlocks.PHASE_GNEISS.get());
-        blockModels.createTrivialCube(ModBlocks.PHASE_GNEISS_BRICKS.get());
-        blockModels.createTrivialCube(ModBlocks.POLISHED_PHASE_GNEISS.get());
+        blockModels.createTrivialCube(ModBlocks.SPIRIT_GNEISS.get());
+        blockModels.createTrivialCube(ModBlocks.SPIRIT_GNEISS_BRICKS.get());
+        blockModels.createTrivialCube(ModBlocks.POLISHED_SPIRIT_GNEISS.get());
 
         blockModels.createTrivialBlock(ModBlocks.CHALK.get(), TexturedModel.CARPET);
 
@@ -65,11 +61,19 @@ public class ModModelProvider extends ModelProvider {
 
         blockModels.createPlantWithDefaultItem(ModBlocks.GHOST_ASPEN_SAPLING.get(), ModBlocks.POTTED_GHOST_ASPEN_SAPLING.get(), BlockModelGenerators.PlantType.NOT_TINTED);
 
-        blockModels.createDoublePlant(ModBlocks.SOMEFLOWER.get(), BlockModelGenerators.PlantType.NOT_TINTED);
-
         //Debug
         itemModels.generateFlatItem(ModItems.FERAL_PACT.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.WATER_PACT.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.PLANE_SHIFT_PACT.get(), ModelTemplates.FLAT_ITEM);
+    }
+
+    private static final Set<Block> IGNORED_BLOCKS = Set.of(
+            ModBlocks.MOONFLOWER.get()
+    );
+
+    @Override
+    protected Stream<? extends Holder<Block>> getKnownBlocks() {
+        return BuiltInRegistries.BLOCK.listElements().filter((holder) -> holder.getKey().identifier().getNamespace().equals(this.modId))
+                .filter(holder -> !IGNORED_BLOCKS.contains(holder.value()));
     }
 }

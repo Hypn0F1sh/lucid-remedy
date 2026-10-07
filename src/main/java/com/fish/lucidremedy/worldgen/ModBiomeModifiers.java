@@ -16,6 +16,7 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 public class ModBiomeModifiers {
 
     public static final ResourceKey<BiomeModifier> ADD_TREE_GHOST_ASPEN = registerKey("add_tree_ghost_aspen");
+    public static final ResourceKey<BiomeModifier> ADD_PATCH_MOONFLOWER = registerKey("add_patch_moonflower");
 
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
@@ -24,6 +25,10 @@ public class ModBiomeModifiers {
         context.register(ADD_TREE_GHOST_ASPEN, new BiomeModifiers.AddFeaturesBiomeModifier(
                 HolderSet.direct(biomes.getOrThrow(Biomes.SUNFLOWER_PLAINS)),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.GHOST_ASPEN_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+        context.register(ADD_PATCH_MOONFLOWER, new BiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(biomes.getOrThrow(Biomes.SUNFLOWER_PLAINS)),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.PATCH_MOONFLOWER)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
     }

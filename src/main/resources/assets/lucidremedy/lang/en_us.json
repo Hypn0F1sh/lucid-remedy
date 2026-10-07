@@ -3,7 +3,7 @@
   "item.lucidremedy.rage_emetic": "Rage Emetic",
   "item.lucidremedy.evasium": "Evasium",
   "item.lucidremedy.chisel": "Chisel",
-  "item.lucidremedy.lukes_clover": "Luke's Clover",
+  "item.lucidremedy.lukes_clover": "§bLuke's Clover",
   "item.lucidremedy.epidemic_scalpel": "Epidemic Scalpel",
 
   "item.lucidremedy.ego_stone_vitality": "Ego Stone",
@@ -12,7 +12,13 @@
   "item.lucidremedy.ego_stone_agility": "Ego Stone",
   "item.lucidremedy.ego_stone_spark": "Ego Stone",
 
-  "block.lucidremedy.phase_gneiss": "Phase Gneiss",
-  "block.lucidremedy.phase_gneiss_bricks": "Phase Gneiss Bricks",
-  "block.lucidremedy.polished_phase_gneiss": "Polished Phase Gneiss"
+
+
+  "block.lucidremedy.spirit_gneiss": "Spirit Gneiss",
+  "block.lucidremedy.spirit_gneiss_bricks": "Spirit Gneiss Bricks",
+  "block.lucidremedy.polished_spirit_gneiss": "Polished Spirit Gneiss",
+
+
+
+  "tooltip.lucidremedy.lukes_clover": "§7Check out §2§lLukeiest §7on Youtube!"
 }

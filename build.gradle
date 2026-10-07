@@ -47,13 +47,16 @@ dependencies {
     implementation "maven.modrinth:XaDC71GB:84kuUpr4"
 
     // LDLib2
-    implementation "maven.modrinth:B1CBVXHX:IUJftPqz"
+    implementation "maven.modrinth:B1CBVXHX:15aCZh6V"
 
     // KilaGraph
-    implementation "maven.modrinth:zZO0N3W6:1PZY7yPu"
+    implementation "maven.modrinth:zZO0N3W6:m0I2S2Tt"
 
     // Photon2
-    implementation "maven.modrinth:gzevkJbM:XflihBxE"
+    implementation "maven.modrinth:gzevkJbM:4YcLuGpO"
+
+    //CuriosAPI
+    implementation "maven.modrinth:vvuO3ImH:dRnRThvD"
 }
 
 base {
